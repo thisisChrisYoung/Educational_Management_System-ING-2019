@@ -11,17 +11,19 @@
 		<h1>修改密码</h1>
 		<hr>
 		<div>
+			<table>
+				<tr>
+					<td>旧密码：&emsp;</td>
+					<td><input type="password" id="oldpassword"
+						onkeyup="checkPWTrue2()"><span id="s1"></span></td>
+					<td><input type="password" id="oldpassword2"
+						style="visibility: hidden" name="t_password"
+						value="${sessionScope.teacher.t_password}"></td>
+				</tr>
+			</table>
 			<form action="doUpdatePW" method="post"
 				onsubmit="return checkSubmit()">
 				<table>
-					<tr>
-						<td>旧密码：</td>
-						<td><input type="password" id="oldpassword" name="t_password"
-							onkeyup="checkPWTrue2()"><span id="s1"></span></td>
-							<td><input type="password" id="oldpassword2"
-							name="s_password" style="visibility: hidden"
-							value="${sessionScope.teacher.t_password}"></td>
-					</tr>
 					<tr>
 						<td>新密码：</td>
 						<td><input type="password" id="password" name="t_password"
@@ -29,7 +31,7 @@
 					</tr>
 					<tr>
 						<td>确认密码：</td>
-						<td><input type="password" id="password2" name="t_password2"
+						<td><input type="password" id="password2"
 							onkeyup="checkPWTrue()"><span id="s3"></span></td>
 					</tr>
 				</table>
@@ -39,7 +41,6 @@
 	</div>
 </body>
 <script type="text/javascript">
-
 	function checkPWTrue2() {//确认旧密码
 		var check = false;
 		var oldpassword2 = document.getElementById("oldpassword2").value;
@@ -47,7 +48,7 @@
 		if (!oldpassword) {
 			document.getElementById("s1").innerHTML = "❌请输入旧密码";
 			check = false;
-		} else if (ol2dpassword2 == oldpassword) {
+		} else if (oldpassword2 == oldpassword) {
 			document.getElementById("s1").innerHTML = "✔";
 			check = true;
 		} else {
