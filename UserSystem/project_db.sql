@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80012
 File Encoding         : 65001
 
-Date: 2019-01-24 09:24:09
+Date: 2019-01-28 15:03:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -144,12 +144,18 @@ CREATE TABLE `t_student` (
   KEY `fk_student_2` (`gid`),
   CONSTRAINT `fk_student_1` FOREIGN KEY (`tid`) REFERENCES `t_teacher` (`tid`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_student_2` FOREIGN KEY (`gid`) REFERENCES `t_group` (`gid`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=200002 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=200008 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_student
 -- ----------------------------
-INSERT INTO `t_student` VALUES ('200001', '江借时', '男', '1926-08-16', '10001', '13826462534', 'jiang92', '123456,,192608,123456,123456', '4');
+INSERT INTO `t_student` VALUES ('200001', '江借时', '男', '1926-08-17', '10001', '13826462534', 'jiang92', '192608', '4');
+INSERT INTO `t_student` VALUES ('200002', '习永旭', '男', '1989-07-11', '10001', '13628764352', 'xixixi', '123456', '4');
+INSERT INTO `t_student` VALUES ('200003', '江镜屏', '女', '2000-10-09', '10001', '18762537263', 'abcdef', '123456', '4');
+INSERT INTO `t_student` VALUES ('200004', '维尼', '男', '1986-05-19', '10001', '15723721837', 'a12345', '123456', '4');
+INSERT INTO `t_student` VALUES ('200005', '江永荃', '男', '2004-12-01', '10001', '13028246342', 'a123456', '123456', '4');
+INSERT INTO `t_student` VALUES ('200006', '习永旭', '女', '2019-01-29', '10001', '13425242524', 'jiang923', '123456', '4');
+INSERT INTO `t_student` VALUES ('200007', '大江', '男', null, '10001', '18762587702', 'qwerty', '123456', '4');
 
 -- ----------------------------
 -- Table structure for `t_teacher`
@@ -173,4 +179,4 @@ CREATE TABLE `t_teacher` (
 -- Records of t_teacher
 -- ----------------------------
 INSERT INTO `t_teacher` VALUES ('1', '管理员', '男', '2019-01-18', '123456', 'admin', 'admin', '1');
-INSERT INTO `t_teacher` VALUES ('10001', '张三', '女', '1962-08-22', '13245284732', 'zhangsan', '123456', '2');
+INSERT INTO `t_teacher` VALUES ('10001', '张三', '女', null, '13245284732', 'zhangsan', '123456', '2');
