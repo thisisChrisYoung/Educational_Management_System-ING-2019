@@ -55,6 +55,9 @@
 			<p style="font-size: 10px; color: red;">注：*号项为必填</p>
 			<input type="submit" value="提交">
 		</form>
+		<form action="checkLogin" method="post">
+			<input type="submit" value="返回">
+		</form>
 	</div>
 </body>
 

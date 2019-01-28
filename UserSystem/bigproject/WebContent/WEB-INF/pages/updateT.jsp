@@ -68,6 +68,9 @@ a:active {
 			</table>
 			<input type="submit" value="提交">
 		</form>
+		<form action="checkLogin" method="post">
+			<input type="submit" value="返回">
+		</form>
 	</div>
 </body>
 
