@@ -12,6 +12,9 @@ public interface StudentMapper {
 	@Select("SELECT * FROM t_student where s_username=#{s_username}")
 	Student findBYUsername(String s_username);
 
+	@Select("SELECT * FROM t_student where sid=#{sid}")
+	Student findById(Integer sid);
+	
 	@Update("UPDATE t_student SET sex=#{sex}, birthday=#{birthday}, s_phone=#{s_phone} where sid=#{sid}")
 	void updateStu(@Param("sex") String sex, @Param("birthday") Date birthday, @Param("s_phone") Long s_phone,
 			@Param("sid") Integer sid);
