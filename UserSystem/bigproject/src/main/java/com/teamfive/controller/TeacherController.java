@@ -132,6 +132,7 @@ public class TeacherController {
 		}
 	}
 
+	//分页操作
 	@RequestMapping("/showpage")
 	public String selByPage(Model model, HttpServletRequest request) {
 		String s_name = request.getParameter("s_name");
