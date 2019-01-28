@@ -40,11 +40,11 @@ public interface TeacherMapper {
 			"		<where>\r\n" + 
 			"			<if test=\"s_name!=null and s_name!=''\">\r\n" + 
 			"				<bind name=\"s_name\" value=\"'%'+s_name+'%'\"></bind>\r\n" + 
-			"				and name like #{s_name}\r\n" + 
+			"				and s_name like #{s_name}\r\n" + 
 			"			</if>		\r\n" + 
 			"			<if test=\"t_name!=null and t_name!=''\">\r\n" + 
 			"				<bind name=\"t_name\" value=\"'%'+t_name+'%'\"></bind>\r\n" + 
-			"				and tid in (select id from t_teacher where name like #{t_name})\r\n" + 
+			"				and tid in (select id from t_teacher where t_name like #{t_name})\r\n" + 
 			"			</if>\r\n" + 
 			"		</where>\r\n" + 
 			"		limit #{pageStart},#{pageSize}</script>")
@@ -54,11 +54,11 @@ public interface TeacherMapper {
 			"		<where>\r\n" + 
 			"			<if test=\"s_name!=null and s_name!=''\">\r\n" + 
 			"				<bind name=\"s_name\" value=\"'%'+s_name+'%'\"></bind>\r\n" + 
-			"				and name like #{s_name}\r\n" + 
+			"				and s_name like #{s_name}\r\n" + 
 			"			</if>		\r\n" + 
 			"			<if test=\"t_name!=null and t_name!=''\">\r\n" + 
 			"				<bind name=\"t_name\" value=\"'%'+t_name+'%'\"></bind>\r\n" + 
-			"				and tid in (select id from t_teacher where name like #{t_name})\r\n" + 
+			"				and tid in (select id from t_teacher where t_name like #{t_name})\r\n" + 
 			"			</if>\r\n" + 
 			"		</where></script>")
 	Long selCountByPageInfo(PageInfo pInfo);
