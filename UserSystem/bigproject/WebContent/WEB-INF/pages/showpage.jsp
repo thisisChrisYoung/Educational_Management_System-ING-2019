@@ -10,6 +10,7 @@
 </head>
 <body>
 	<div>
+	<span>学生姓名：</span><input type="text" id="studentname"><input type="button" id="btn3" value="查询">
 		<table border="1">
 			<tr>
 				<th>学生编号</th>
@@ -36,15 +37,15 @@
 <script type="text/javascript">
 pageSize = "${pInfo.pageSize}";
 pageNumber = "${pInfo.pageNumber}";
-tname = "${sessionScope.teacher.t_name}";
-sname = "${pInfo.s_name}";
+t_name = "${sessionScope.teacher.t_name}";
+s_name = "${pInfo.s_name}";
 total = ${pInfo.total};
 
 var clickBtn1 = document.getElementById('btn1');
 clickBtn1.onclick = function() {
 	pageNumber = parseInt(pageNumber)-1;
 	 if(pageNumber>=1){
-			location.href="showpage?pageSize="+pageSize+"&pageNumber="+pageNumber;
+			location.href="showpage?pageSize="+pageSize+"&pageNumber="+pageNumber+"&t_name"+t_name;
 		}else{
 			pageNumber=1;
 		}
@@ -55,12 +56,16 @@ var clickBtn2 = document.getElementById('btn2');
 clickBtn2.onclick = function() {
 	pageNumber = parseInt(pageNumber)+1;
 	if(pageNumber<=total){
-			location.href="showpage?pageSize="+pageSize+"&pageNumber="+pageNumber;
+			location.href="showpage?pageSize="+pageSize+"&pageNumber="+pageNumber+"&t_name"+t_name;
 		}else{
 			pageNumber=total;
 		}
 		return false;
 };
 
+var clickBtn3 = document.getElementById('btn3');
+clickBtn3.onclick = function(){
+	location.href="showpage?pageSize="+pageSize+"&pageNumber=1&t_name"+t_name;
+}
 </script>
 </html>
