@@ -42,4 +42,9 @@ public class StudentServiceImpl implements StudentService {
 			throw new RuntimeException("出现异常，事务回滚");
 		}
 	}
+	
+	@Override
+	public List<Score> getScoreList(Integer sid){
+		return studentMapper.getScore(sid);
+	}
 }
