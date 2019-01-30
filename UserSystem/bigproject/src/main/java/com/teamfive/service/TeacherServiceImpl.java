@@ -103,6 +103,10 @@ public class TeacherServiceImpl implements TeacherService {
 		pInfo.setTotal(count%pageSize==0?count/pageSize:count/pageSize+1);
 		return pInfo;
 	}
-
+	
+	@Override
+	public List<Course> courseList(Integer cid){
+		return teacherMapper.getCourseScore(cid);
+	}
 
 }
