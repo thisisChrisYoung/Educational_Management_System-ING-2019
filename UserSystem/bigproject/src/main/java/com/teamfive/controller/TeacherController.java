@@ -148,5 +148,15 @@ public class TeacherController {
 		return "showpage";
 
 	}
+	
+	//查询课程成绩
+	@RequestMapping("/checkScore/{cid}")
+	public ModelAndView checkScore(@PathVariable("cid") Integer cid, ModelAndView mv){
+		List<Course> courseList = teacherService.courseList(cid);
+		mv.addObject("checkScore", courseList);
+		mv.setViewName("checkscore");
+		System.out.println(courseList);
+		return mv;
+	}
 
 }
