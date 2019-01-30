@@ -6,5 +6,5 @@ public interface StudentService {
 	Student checkLogin(String s_username, String s_password);
 	void updateStu(Student student);
 	void updateSPW(Student student);
-	
+	List<Score> getScoreList(Integer sid);
 }
