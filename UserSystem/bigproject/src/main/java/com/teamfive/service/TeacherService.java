@@ -16,4 +16,6 @@ public interface TeacherService {
 	void updateTeac(Teacher teacher);
 
 	void updateTPW(Teacher teacher);
+	
+	List<Course> courseList(Integer cid);
 }
