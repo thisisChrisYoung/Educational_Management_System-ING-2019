@@ -63,4 +63,7 @@ public interface TeacherMapper {
 			"		</where></script>")
 	Long selCountByPageInfo(PageInfo pInfo);
 	
+	
+	@Select("SELECT s_name AS course_student, t_course.course_name AS course_name, t_score.score AS `course_score` FROM t_course INNER JOIN t_score ON t_score.cid = t_course.cid INNER JOIN t_student ON t_score.sid = t_student.sid WHERE t_score.cid = #{cid}")
+	List<Course> getCourseScore(@Param("cid") Integer cid);
 }
