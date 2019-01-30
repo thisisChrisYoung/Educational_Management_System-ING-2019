@@ -21,4 +21,7 @@ public interface StudentMapper {
 
 	@Update("UPDATE t_student SET s_password=#{s_password} where sid=#{sid}")
 	void updateSPW(@Param("s_password") String s_password, @Param("sid") Integer sid);
+	
+	@Select("SELECT t_course.course_name AS course_name, IFNULL(score,0) AS course_score FROM t_student INNER JOIN t_course LEFT JOIN t_score ON t_course.cid = t_score.cid AND t_student.sid = t_score.sid WHERE t_student.sid = #{sid}")
+	List<Score> getScore(Integer sid);
 }
