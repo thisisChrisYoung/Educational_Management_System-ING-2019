@@ -88,4 +88,14 @@ public class StudentController {
 			return "error";
 		}
 	}
+	
+	//查询个人成绩
+	@RequestMapping("/getscore")
+	public ModelAndView getScoreList(ScoreVo scoreVo, Model model ,Student student){
+		List<Score> listScore = studentService.getScoreList(student.getSid());
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("listScore", listScore);
+		mv.setViewName("showscore");
+		return mv;
+	}
 }
